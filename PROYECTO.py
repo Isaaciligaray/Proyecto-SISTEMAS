@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox, QTableWidgetItem, QTextBrowser
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox, QTableWidgetItem, QTextBrowser, QLineEdit
 from PyQt5.uic import loadUi
 
 #-------------------------------------------------------------------------------------------------------------
@@ -715,6 +715,8 @@ class MainWindow(QMainWindow):
         loadUi("main_window.ui", self)
         self.connection = None
 
+        self.main_password.setEchoMode(QLineEdit.Password)
+        
         self.main_boton_conectar.clicked.connect(self.connect_to_databse)
 
     def connect_to_databse(self):
